@@ -1,0 +1,32 @@
+.module-autocomplete-search .ui-menu-item:hover .ui-menu-item-wrapper {
+    color: inherit !important;
+}
+
+.module-autocomplete-search .ui-menu-item-wrapper {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    color: inherit !important;
+}
+
+.module-autocomplete-search .ui-menu-item .suggestion img {
+    max-height: 60px;
+}
+
+.module-autocomplete-search .ui-menu-item .suggestion .price {
+    display: block;
+    font-weight: bolder;
+}
+
+.module-autocomplete-search.ui-autocomplete {
+    max-width: 60%;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}

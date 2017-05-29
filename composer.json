@@ -1,0 +1,12 @@
+{
+    "name": "gplcart/autocomplete_search",
+    "type": "gplcart-module",
+    "description": "Adds autocomplete product search functionality to any text input",
+    "keywords": ["gplcart", "ecommerce", "shopping cart", "gplcart module", "php"],
+    "license": "GPL-3.0+",
+    "require": {
+        "gplcart/composer-module-installer": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
