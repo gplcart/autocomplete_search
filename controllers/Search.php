@@ -50,7 +50,7 @@ class Search extends FrontendController
      */
     protected function getProductsSearch()
     {
-        $term = $this->getPosted('term');
+        $term = $this->getPosted('term', '', true, 'string');
 
         $entity_options = array(
             'entity' => 'product',
