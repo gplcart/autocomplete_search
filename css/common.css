@@ -19,7 +19,6 @@
 }
 
 .module-autocomplete-search.ui-autocomplete {
-    max-width: 60%;
     overflow: hidden;
     background-color: #ffffff;
     border: 1px solid #ccc;

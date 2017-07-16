@@ -34,6 +34,9 @@
             select: function () {
                 return false;
             },
+            open: function (e) {
+                $('.module-autocomplete-search.ui-autocomplete').css('width', $(e.target).outerWidth());
+            },
             classes: {
                 "ui-autocomplete": "module-autocomplete-search"
             }
@@ -46,7 +49,6 @@
                 $(this).autocomplete('search');
             }
         });
-
     };
 
 })(GplCart, jQuery);
