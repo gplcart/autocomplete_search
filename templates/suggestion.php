@@ -6,16 +6,18 @@
  * @license https://www.gnu.org/licenses/gpl.html GNU/GPLv3
  */
 ?>
-<span class="media suggestion" onclick="location.href = '<?php echo $this->url("product/{$product['product_id']}", array(), true); ?>';">
-  <span class="media-left">
-    <img class="media-object" src="<?php echo $this->e($product['thumb']); ?>">
-  </span>
-  <span class="media-body">
-    <span class="media-heading title">
-      <?php echo $this->e($product['title']); ?>
+<a href="<?php echo $this->url("product/{$product['product_id']}", array(), true); ?>">
+  <span class="media suggestion">
+    <span class="media-left">
+      <img class="media-object" src="<?php echo $this->e($product['thumb']); ?>">
     </span>
-    <span class="price">
-      <?php echo $this->e($product['price_formatted']); ?>
+    <span class="media-body">
+      <span class="media-heading title">
+        <?php echo $this->e($product['title']); ?>
+      </span>
+      <span class="price">
+        <?php echo $this->e($product['price_formatted']); ?>
+      </span>
     </span>
   </span>
-</span>
+</a>
