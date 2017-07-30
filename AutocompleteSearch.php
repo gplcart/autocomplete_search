@@ -46,7 +46,6 @@ class AutocompleteSearch extends Module
      */
     public function hookRouteList(array &$routes)
     {
-        // Settings
         $routes['admin/module/settings/autocomplete_search'] = array(
             'access' => 'module_edit',
             'handlers' => array(
@@ -54,7 +53,6 @@ class AutocompleteSearch extends Module
             )
         );
 
-        // JSON callback
         $routes['autocomplete-search'] = array(
             'handlers' => array(
                 'controller' => array('gplcart\\modules\\autocomplete_search\\controllers\\Search', 'doSearch')
