@@ -54,7 +54,8 @@ class Search extends FrontendController
 
         $entity_options = array(
             'entity' => 'product',
-            'template_item' => 'autocomplete_search|suggestion');
+            'template_item' => 'autocomplete_search|suggestion'
+        );
 
         $search_options = array(
             'status' => true,
