@@ -4,8 +4,8 @@
  * @copyright Copyright (c) 2017, Iurii Makukh <gplcart.software@gmail.com>
  * @license https://www.gnu.org/licenses/gpl-3.0.en.html GPL-3.0+
  */
-/* global GplCart, jQuery */
-(function (GplCart, $) {
+/* global Gplcart, jQuery */
+(function (Gplcart, $) {
 
     "use strict";
 
@@ -13,19 +13,19 @@
      * Setup autocomplete search
      * @returns {undefined}
      */
-    GplCart.onload.moduleAutocompleteSearch = function () {
+    Gplcart.onload.moduleAutocompleteSearch = function () {
 
-        var params, input = $(GplCart.settings.autocomplete_search.selector);
+        var params, input = $(Gplcart.settings.autocomplete_search.selector);
 
         if (input.length === 0) {
             return;
         }
 
         input.autocomplete({
-            minLength: GplCart.settings.autocomplete_search.min_length,
+            minLength: Gplcart.settings.autocomplete_search.min_length,
             source: function (request, response) {
-                params = {term: request.term, token: GplCart.settings.token};
-                $.post(GplCart.settings.base + 'autocomplete-search', params, function (data) {
+                params = {term: request.term, token: Gplcart.settings.token};
+                $.post(Gplcart.settings.base + 'autocomplete-search', params, function (data) {
                     response($.map(data, function (value, key) {
                         return {suggestion: value.rendered};
                     }));
@@ -51,4 +51,4 @@
         });
     };
 
-})(GplCart, jQuery);
+})(Gplcart, jQuery);
