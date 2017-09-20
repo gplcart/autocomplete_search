@@ -15,7 +15,7 @@
       <div class="help-block">
         <?php echo $this->error('selector'); ?>
         <div class="text-muted">
-          <?php echo $this->text('A CSS selector of an input element you want to make autocomplete'); ?>
+          <?php echo $this->text('CSS selector of an input element you want to make autocomplete'); ?>
         </div>
       </div>
     </div>
