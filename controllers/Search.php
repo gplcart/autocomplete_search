@@ -40,7 +40,7 @@ class Search extends FrontendController
     public function doSearch()
     {
         if ($this->isPosted('term')) {
-            $this->response->json($this->getProductsSearch());
+            $this->response->outputJson($this->getProductsSearch());
         }
     }
 
