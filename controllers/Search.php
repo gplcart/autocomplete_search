@@ -60,7 +60,7 @@ class Search extends FrontendController
         $search_options = array(
             'status' => true,
             'store_id' => $this->store_id,
-            'limit' => array(0, $this->config->module('autocomplete_search', 'max_result')));
+            'limit' => array(0, $this->config->getFromModule('autocomplete_search', 'max_result')));
 
         $products = $this->search->search('product', $term, $search_options);
         return $this->prepareEntityItems($products, $entity_options);

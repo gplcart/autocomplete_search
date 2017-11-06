@@ -9,7 +9,8 @@
 
 namespace gplcart\modules\autocomplete_search;
 
-use gplcart\core\Module;
+use gplcart\core\Module,
+    gplcart\core\Config;
 
 /**
  * Main class for Autocomplete search module
@@ -18,11 +19,11 @@ class AutocompleteSearch extends Module
 {
 
     /**
-     * Constructor
+     * @param Config $config
      */
-    public function __construct()
+    public function __construct(Config $config)
     {
-        parent::__construct();
+        parent::__construct($config);
     }
 
     /**
@@ -31,7 +32,7 @@ class AutocompleteSearch extends Module
      */
     public function hookConstructControllerFrontend($controller)
     {
-        $settings = $this->config->module('autocomplete_search', array());
+        $settings = $this->config->getFromModule('autocomplete_search', array());
         $controller->setJsSettings('autocomplete_search', $settings);
 
         $controller->setJs('system/modules/autocomplete_search/js/common.js');

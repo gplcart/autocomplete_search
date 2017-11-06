@@ -42,7 +42,7 @@ class Settings extends BackendController
         $this->setTitleEditSettings();
         $this->setBreadcrumbEditSettings();
 
-        $this->setData('settings', $this->config->module('autocomplete_search'));
+        $this->setData('settings', $this->config->getFromModule('autocomplete_search'));
 
         $this->submitSettings();
         $this->outputEditSettings();
