@@ -32,13 +32,7 @@ class AutocompleteSearch extends Module
      */
     public function hookConstructControllerFrontend($controller)
     {
-        $settings = $this->config->getFromModule('autocomplete_search', array());
-        $controller->setJsSettings('autocomplete_search', $settings);
-
-        $controller->setJs('system/modules/autocomplete_search/js/common.js');
-        $controller->setCss('system/modules/autocomplete_search/css/common.css');
-
-        $controller->addAssetLibrary('jquery_ui');
+        $this->setModuleAssets($controller);
     }
 
     /**
@@ -59,6 +53,21 @@ class AutocompleteSearch extends Module
                 'controller' => array('gplcart\\modules\\autocomplete_search\\controllers\\Search', 'doSearch')
             )
         );
+    }
+
+    /**
+     * Sets module specific assets
+     * @param \gplcart\core\controllers\frontend\Controller $controller
+     */
+    protected function setModuleAssets($controller)
+    {
+        if (!$controller->isInternalRoute()) {
+            $settings = $this->config->getFromModule('autocomplete_search', array());
+            $controller->setJsSettings('autocomplete_search', $settings);
+            $controller->setJs('system/modules/autocomplete_search/js/common.js');
+            $controller->setCss('system/modules/autocomplete_search/css/common.css');
+            $controller->addAssetLibrary('jquery_ui');
+        }
     }
 
 }
