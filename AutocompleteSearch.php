@@ -9,21 +9,26 @@
 
 namespace gplcart\modules\autocomplete_search;
 
-use gplcart\core\Module,
-    gplcart\core\Config;
+use gplcart\core\Module;
 
 /**
  * Main class for Autocomplete search module
  */
-class AutocompleteSearch extends Module
+class AutocompleteSearch
 {
 
     /**
-     * @param Config $config
+     * Module class instance
+     * @var \gplcart\core\Module $module
      */
-    public function __construct(Config $config)
+    protected $module;
+
+    /**
+     * @param Module $module
+     */
+    public function __construct(Module $module)
     {
-        parent::__construct($config);
+        $this->module = $module;
     }
 
     /**
@@ -62,7 +67,7 @@ class AutocompleteSearch extends Module
     protected function setModuleAssets($controller)
     {
         if (!$controller->isInternalRoute()) {
-            $settings = $this->config->getFromModule('autocomplete_search', array());
+            $settings = $this->module->getSettings('autocomplete_search', array());
             $controller->setJsSettings('autocomplete_search', $settings);
             $controller->setJs('system/modules/autocomplete_search/js/common.js');
             $controller->setCss('system/modules/autocomplete_search/css/common.css');
