@@ -9,12 +9,12 @@
 
 namespace gplcart\modules\autocomplete_search;
 
-use gplcart\core\Module as CoreModule;
+use gplcart\core\Module;
 
 /**
  * Main class for Autocomplete search module
  */
-class Module
+class Main
 {
 
     /**
@@ -24,9 +24,9 @@ class Module
     protected $module;
 
     /**
-     * @param CoreModule $module
+     * @param Module $module
      */
-    public function __construct(CoreModule $module)
+    public function __construct(Module $module)
     {
         $this->module = $module;
     }
