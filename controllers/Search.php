@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @package Autocomplete search 
- * @author Iurii Makukh <gplcart.software@gmail.com> 
- * @copyright Copyright (c) 2017, Iurii Makukh <gplcart.software@gmail.com> 
- * @license https://www.gnu.org/licenses/gpl-3.0.en.html GPL-3.0+ 
+ * @package Autocomplete search
+ * @author Iurii Makukh <gplcart.software@gmail.com>
+ * @copyright Copyright (c) 2017, Iurii Makukh <gplcart.software@gmail.com>
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html GPL-3.0+
  */
 
 namespace gplcart\modules\autocomplete_search\controllers;
 
-use gplcart\core\models\Search as SearchModel;
 use gplcart\core\controllers\frontend\Controller as FrontendController;
+use gplcart\core\models\Search as SearchModel;
 
 /**
  * Handles incoming requests and outputs data related to Autocomplete search module
@@ -63,7 +63,8 @@ class Search extends FrontendController
             'limit' => array(0, $this->module->getSettings('autocomplete_search', 'max_result')));
 
         $products = $this->search->search('product', $term, $search_options);
-        return $this->prepareEntityItems($products, $entity_options);
+        $this->prepareEntityItems($products, $entity_options);
+        return $products;
     }
 
 }
