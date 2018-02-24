@@ -9,13 +9,13 @@
 
 namespace gplcart\modules\autocomplete_search\controllers;
 
-use gplcart\core\controllers\frontend\Controller as FrontendController;
+use gplcart\core\controllers\frontend\Controller;
 use gplcart\core\models\Search as SearchModel;
 
 /**
  * Handles incoming requests and outputs data related to Autocomplete search module
  */
-class Search extends FrontendController
+class Search extends Controller
 {
 
     /**
@@ -35,7 +35,8 @@ class Search extends FrontendController
     }
 
     /**
-     * Route page callback to output JSON for autocomplete suggestions
+     * Route page callback
+     * Output JSON for autocomplete suggestions
      */
     public function doSearch()
     {
@@ -64,6 +65,7 @@ class Search extends FrontendController
 
         $products = $this->search->search('product', $term, $search_options);
         $this->prepareEntityItems($products, $entity_options);
+
         return $products;
     }
 

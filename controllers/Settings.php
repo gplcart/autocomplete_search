@@ -9,21 +9,13 @@
 
 namespace gplcart\modules\autocomplete_search\controllers;
 
-use gplcart\core\controllers\backend\Controller as BackendController;
+use gplcart\core\controllers\backend\Controller;
 
 /**
  * Handles incoming requests and outputs data related to Autocomplete search module
  */
-class Settings extends BackendController
+class Settings extends Controller
 {
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     /**
      * Route page callback to display the module settings page
@@ -32,9 +24,7 @@ class Settings extends BackendController
     {
         $this->setTitleEditSettings();
         $this->setBreadcrumbEditSettings();
-
         $this->setData('settings', $this->module->getSettings('autocomplete_search'));
-
         $this->submitSettings();
         $this->outputEditSettings();
     }
@@ -44,8 +34,7 @@ class Settings extends BackendController
      */
     protected function setTitleEditSettings()
     {
-        $vars = array('%name' => $this->text('Autocomplete search'));
-        $title = $this->text('Edit %name settings', $vars);
+        $title = $this->text('Edit %name settings', array('%name' => $this->text('Autocomplete search')));
         $this->setTitle($title);
     }
 
